@@ -34,8 +34,8 @@ pub fn sync_remote_files(
     slave_dir: &str,
 ) {
     let rsync_command = format!(
-        "rsync -az --delete -e 'ssh -p {}' {}@{}:{} {}",
-        port, user, remote_host, master_dir, slave_dir
+        "rsync -az --delete -e 'ssh -p {}' {} {}@{}:{}",
+        port, master_dir, user, remote_host, slave_dir
     );
 
     // Run the rsync command to sync the directories with a remote host
