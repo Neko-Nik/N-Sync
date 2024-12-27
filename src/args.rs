@@ -43,6 +43,12 @@ impl Args {
     pub fn parse_args() -> Self {
         let args = Args::parse();
 
+        // Check if "rsync" is installed on the system or not
+        if !Path::new("/usr/bin/rsync").exists() {
+            eprintln!("Error: 'rsync' is not installed on the system. We use 'rsync' to sync files internally.");
+            process::exit(1);
+        }
+
         // Validate the origin directory
         if !Path::new(&args.origin).exists() {
             eprintln!("Error: The origin directory '{}' does not exist.", args.origin);
