@@ -5,13 +5,18 @@ edition = "2021"
 authors = ["Neko Nik <admin@nekonik.com>"]
 description = "A simple CLI tool for Syncing files across servers over SSH or local filesystem"
 
+
 [dependencies]
-clap = { version = "4.5.23", features = ["derive"] }
 notify = "6.1.1"
 tokio = { version = "1.32", features = ["full"] }
+clap = { version = "4.5.23", features = ["derive"] }
 
 
 [profile.release]
-lto = true
-codegen-units = 1
-panic = "abort"
+lto = "fat" # Full Link Time Optimization for the best runtime performance
+codegen-units = 1 # Optimize as a single unit for better cross-module optimizations
+panic = "abort" # Reduces runtime overhead by eliminating stack unwinding on panic
+opt-level = 3 # Maximum performance optimization
+overflow-checks = true # Enables integer overflow checks to ensure stability
+debug = false
+strip = true
