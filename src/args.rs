@@ -9,7 +9,7 @@ use std::process;
 #[command(version = "v1.0")]
 #[command(about = "N Sync - Simple Sync tool b/w servers")]
 #[command(long_about = "This is a simple tool to sync files between servers")]
-#[command(after_help = "Author: Neko Nik, admin@nekonik.com")]
+#[command(after_help = "Author: Neko Nik <admin@nekonik.com>\nN-Sync Copyright (C) 2024 Neko Nik")]
 pub struct Args {
     /// Port number to connect to the SSH
     #[arg(short, long, default_value = "22")]
