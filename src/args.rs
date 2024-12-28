@@ -6,7 +6,7 @@ use std::process;
 #[derive(Parser, Debug)]
 #[command(name = "N-sync")]
 #[command(author = "Neko Nik, admin@nekonik.com")]
-#[command(version = "v1.0")]
+#[command(version = "v1.1")]
 #[command(about = "N Sync - Simple Sync tool b/w servers")]
 #[command(long_about = "This is a simple tool to sync files between servers")]
 #[command(after_help = "Author: Neko Nik <admin@nekonik.com>\nN-Sync Copyright (C) 2024 Neko Nik")]

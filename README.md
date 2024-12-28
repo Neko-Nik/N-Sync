@@ -19,12 +19,12 @@ N-sync is a simple and efficient file synchronization tool that allows you to sy
 
 2. Build the project:
    ```bash
-   cargo build --release
+   cargo build --release --target=x86_64-unknown-linux-gnu
    ```
 
 3. Optionally, move the binary to a directory in your `$PATH`:
    ```bash
-   mv target/release/n-sync /usr/local/bin
+   mv target/x86_64-unknown-linux-gnu/release/n-sync /usr/local/bin
    ```
 
 ## Usage
